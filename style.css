@@ -1,0 +1,144 @@
+*{
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+:root{
+    --notificationBg: #FF5555;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 50px;
+  webkit-font-smoothing: antialiased;
+}
+
+.section {
+  background: #FFFFFF;
+  margin: 0px auto;
+  min-height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.section h1 {
+  font-size: 36px;
+  position: absolute;
+  bottom: 75%;
+}
+
+.section-notification .nav {
+  display: flex;
+  background: #333333;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0px 23px 30px -20px rgba(0, 0, 0, 0.4);
+}
+.section-notification .nav > li {
+  padding: 25px 30px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  transition: all 200ms ease-in-out;
+  perspective: 1000px;
+}
+
+ul li{
+    list-style: none;
+}
+.section-notification .nav > li:last-child {
+  border-right: none;
+}
+.section-notification .nav > li:hover {
+  background: #9E9E9E;
+}
+.section-notification .nav > li.is-active {
+  box-shadow: 0px -4px 0px #ABABAB inset;
+  background: #212121;
+  color: white;
+}
+.section-notification .nav > li.is-active .notifications {
+  display: flex;
+  animation: note 800ms ease-in-out forwards;
+  animation: note 800ms ease-in-out forwards;
+  transform-origin: center 60px;
+}
+@keyframes note {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg) translateY(50px) rotateX(90deg);
+  }
+  50% {
+    transform: rotate(-10deg) rotateX(-2deg);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes note {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg) translateY(50px) rotateX(90deg);
+  }
+  50% {
+    transform: rotate(-10deg) rotateX(-2deg);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.section-notification .nav > li .notifications {
+  background: var(--notificationBg);
+  display: none;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  margin-left: -95px;
+  cursor: default;
+}
+.section-notification .nav > li .notifications:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 151, 167, 0);
+  border-top-color: var(--notificationBg);
+  border-width: 16px;
+  margin-left: -16px;
+}
+.section-notification .nav > li .notifications li {
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 18px;
+}
+.section-notification .nav > li .notifications li .material-icons {
+  font-size: 18px;
+}
+.section-notification .nav > li .notifications li span {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 8px;
+}
+
+.nav i{
+    color: white;
+}
